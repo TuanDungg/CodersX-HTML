@@ -1,0 +1,32 @@
+<!-- 
+- Sử dụng getElementsByTagName() để lấy ra danh sách các <p> có class là 'foo'
+- Lặp qua các phần tử và thay đổi nội dung của từng phần tử bằng cách append (thêm vào cuối) một đường link tới coders.tokyo site
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai Tap</title>
+</head>
+
+<body>
+    <p>foo1</p>
+    <p class="foo">foo2</p>
+    <p class="foo">foo3</p>
+    <p class="2foo">foo4</p>
+    <p class="foo">foo5</p>
+
+    <script>
+        var getFoo = document.getElementsByTagName('p');
+        for (let i = 0; i < getFoo.length; i++) {
+            if (getFoo[i].getAttribute('class') === 'foo') {
+                getFoo[i].innerHTML += '<a href = "google.com">google.com</a>'
+            }
+        }
+    </script>
+</body>
+
+</html>

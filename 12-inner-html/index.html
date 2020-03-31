@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner HTML</title>
+</head>
+<body>
+    <ul id="todo_list">
+
+    </ul>
+
+    <script>
+        var listItem = [
+            'Nguyen Van A',
+            'Tran Van B',
+            'Le Thi C'
+        ];
+
+        var todoList = document.getElementById('todo_list');
+        var content = listItem.map(item => {return '<li>'+item+'</li>'}).join('');
+        
+        todoList.innerHTML = content;
+    </script>  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner HTML</title>
+</head>
+<body>
+    <input type="text" name="inputTodoList" id="addItem">
+    <button onclick="addItem()">Add</button>
+    <button onclick="removeItem()">Remove</button>
+    <ul id="todo_list">
+
+    </ul>
+
+    <script>
+        var listItem = [
+            'Nguyen Van A',
+            'Tran Van B',
+            'Le Thi C'
+        ];
+
+        function addItem(){
+            //get value of the input
+            var input = document.getElementById('addItem');
+            var value = input.value;
+            //add listItem array
+            listItem.push(value);
+            //re-render
+            render();
+            //clear input
+            input.value = '';
+        }
+
+        function removeItem(){
+            for(let i= 0; i<listItem.length;i++){
+                listItem.splice(i,1);
+            }
+        }
+
+        function render(){
+            var todoList = document.getElementById('todo_list');
+            var content = listItem.map(item => {return '<li>'+item+'</li>'}).join('');
+            todoList.innerHTML = content;
+        }
+        render();
+    </script>  
+</body>
+</html>
